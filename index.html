@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#eee5d6">
+<title>Benangmerah Textile — A Study in Fabric</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#eee5d6;--cream2:#e6dac8;--red:#a6262b;--ink:#171713;--olive:#596348;--muted:#746f64;--line:rgba(23,23,19,.22);--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif;--g:clamp(20px,4vw,62px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#090909;color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{cursor:pointer}img{width:100%;height:100%;object-fit:cover;display:block}
+.frame{max-width:1600px;margin:clamp(8px,1vw,16px) auto;background:var(--cream);min-height:calc(100vh - 32px);overflow:hidden;position:relative}
+header{height:66px;padding:0 var(--g);display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;gap:15px;font-family:var(--serif);font-size:12px}
+.logo{font-size:17px;letter-spacing:.02em;font-weight:600}.nav{display:flex;justify-content:center;gap:27px;white-space:nowrap}.nav a{padding:6px 0;border-bottom:1px solid transparent}.nav a:hover{border-color:var(--red)}.new{justify-self:end;color:var(--red);font-size:11px}
+.hero{padding:10px var(--g) 42px}
+.hero-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:clamp(30px,5vw,80px);align-items:start}
+.visual-stack{position:relative;padding-top:64px}
+.photo-one{height:clamp(350px,36vw,530px);width:82%;overflow:hidden;background:#c6b7a1}
+.photo-one img{object-position:center;filter:saturate(.68)}
+.photo-two{position:relative;margin-top:10px;width:100%;height:clamp(260px,29vw,420px);overflow:hidden;background:#c8bca9}
+.photo-two img{object-position:center 38%;filter:saturate(.68)}
+.number{position:absolute;left:-17px;top:clamp(370px,39vw,565px);font:italic clamp(100px,14vw,210px)/.8 var(--serif);letter-spacing:-.1em;color:var(--red);z-index:3;pointer-events:none}
+.hero-copy{position:relative;padding-top:0}
+.kicker{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+h1{font:600 clamp(58px,7.8vw,116px)/.78 var(--serif);letter-spacing:-.075em;color:var(--red);margin:0 0 58px;text-align:right}
+h1 span{display:block}h1 span:nth-child(2){margin-right:-5px}h1 span:nth-child(3){margin-right:10%}
+.story-row{display:grid;grid-template-columns:.6fr 1.4fr;gap:24px;margin-top:25px;align-items:start}
+.story-label{font:10px var(--serif);text-transform:uppercase;padding-top:3px}
+.story-text{font:12px/1.58 var(--serif);max-width:390px}
+.story-note{font:italic 10px var(--serif);color:var(--muted);margin:30px 0 0}
+.heritage-row{display:grid;grid-template-columns:1fr auto;align-items:center;margin-top:42px;gap:20px}
+.heritage-row strong{font:600 clamp(27px,3.6vw,49px)/1 var(--serif);color:var(--red);letter-spacing:-.05em}
+.heritage-row span{font:10px var(--serif);text-transform:uppercase}
+.ctas{display:flex;flex-direction:column;align-items:flex-start;gap:26px;margin:clamp(70px,11vw,160px) 0 0 17%}
+.ctas a{font:11px var(--serif);text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:4px;display:inline-flex;gap:12px;align-items:center}
+.ctas a:hover{color:var(--red);border-color:var(--red)}
+.lower-band{margin:0 var(--g) 45px;border-top:1px solid var(--line);padding-top:17px;display:flex;justify-content:space-between;gap:20px;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.section{padding:80px var(--g);border-top:1px solid var(--line)}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:30px}
+.section-head .overline{font-size:9px;letter-spacing:.17em;text-transform:uppercase;color:var(--red)}
+.section-head h2{font:500 clamp(42px,6vw,80px)/.92 var(--serif);letter-spacing:-.06em;margin:12px 0 0}
+.section-head p{max-width:300px;font-size:12px;line-height:1.7;color:var(--muted);margin:0}
+.filters{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;margin:25px 0}
+.filter-left,.filter-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.filters button,.filters select{border:1px solid var(--line);background:transparent;padding:10px 13px;font-size:10px;color:var(--ink)}
+.filters button.active,.filters button:hover{background:var(--red);border-color:var(--red);color:#fff8ef}
+.filters input{background:transparent;border:0;border-bottom:1px solid var(--line);padding:10px 4px;min-width:180px;outline:none;font-size:11px}
+.product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:38px 16px}
+.product{cursor:pointer;min-width:0}
+.product-img{height:clamp(260px,32vw,450px);position:relative;overflow:hidden;background:var(--cream2)}
+.product-img img{filter:saturate(.68);transition:transform .6s}.product:hover .product-img img{transform:scale(1.045)}
+.product-index{position:absolute;top:12px;left:12px;background:var(--cream);padding:7px 9px;font-size:8px;letter-spacing:.12em}
+.product-meta{display:flex;justify-content:space-between;gap:10px;padding-top:12px;border-bottom:1px solid var(--line);padding-bottom:13px}
+.product-meta h3{font:500 23px var(--serif);margin:0 0 4px}.product-meta p{font-size:10px;color:var(--muted);margin:0;line-height:1.5}
+.product-meta button{align-self:center;border:1px solid var(--line);background:transparent;width:33px;height:33px;font-size:15px}
+.product-meta button:hover{background:var(--red);color:white}
+.no-results{grid-column:1/-1;padding:60px;text-align:center;font-size:12px;color:var(--muted)}
+.manifesto{background:var(--olive);color:var(--cream);display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,6vw,85px);align-items:center}
+.manifesto-img{height:clamp(360px,45vw,610px);overflow:hidden}.manifesto-img img{filter:saturate(.55)}
+.manifesto-copy .overline{font-size:9px;letter-spacing:.17em;text-transform:uppercase;color:#e3b9a4}
+.manifesto-copy h2{font:500 clamp(42px,5.6vw,74px)/.94 var(--serif);letter-spacing:-.06em;margin:16px 0 24px}
+.manifesto-copy p{font:12px/1.9 var(--serif);max-width:450px;color:#e1dfd1}
+.manifesto-copy a{display:inline-block;margin-top:20px;font-size:10px;border-bottom:1px solid var(--cream);padding-bottom:5px}
+.contact{background:var(--red);color:var(--cream);display:flex;justify-content:space-between;align-items:end;gap:30px}
+.contact h2{font:500 clamp(43px,6.5vw,86px)/.92 var(--serif);letter-spacing:-.06em;margin:14px 0;max-width:650px}
+.contact p{font-size:12px;line-height:1.7;max-width:390px;color:#f2dcd1}
+.contact a{border:1px solid var(--cream);padding:15px 18px;font-size:10px;white-space:nowrap}.contact a:hover{background:var(--cream);color:var(--red)}
+footer{padding:24px var(--g);display:flex;justify-content:space-between;gap:20px;font-size:9px;letter-spacing:.1em;text-transform:uppercase}
+.float-wa{position:fixed;right:18px;bottom:18px;background:var(--red);color:#fff8ef;padding:13px 16px;font-size:10px;z-index:20;box-shadow:0 5px 20px #0003}
+.modal-bg{position:fixed;inset:0;background:#090909bb;z-index:99;display:none;align-items:center;justify-content:center;padding:20px}.modal-bg.open{display:flex}
+.modal{position:relative;background:var(--cream);width:min(850px,100%);max-height:90vh;overflow:auto;display:grid;grid-template-columns:1fr 1fr}
+.modal-img{min-height:400px}.modal-content{padding:35px;align-self:center}.modal-close{position:absolute;right:10px;top:10px;border:0;background:var(--cream);font-size:23px;width:36px;height:36px}
+.modal-content h2{font:500 40px/.98 var(--serif);margin:15px 0}.modal-content p{font:12px/1.8 var(--serif);color:var(--muted)}.spec{border-top:1px solid var(--line);padding:11px 0;display:flex;justify-content:space-between;gap:12px;font-size:10px}.spec span:last-child{color:var(--muted);text-align:right}
+@media(max-width:850px){.nav{grid-template-columns:1fr auto}.nav .nav{display:none}.new{grid-column:2}.hero-grid{gap:30px}.story-row{grid-template-columns:1fr;gap:10px}.story-text{font-size:11px}.heritage-row{margin-top:28px}.ctas{margin-top:70px}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.manifesto{grid-template-columns:1fr}.manifesto-img{height:390px}.contact{align-items:flex-start;flex-direction:column}}
+@media(max-width:560px){.frame{margin:0;min-height:100vh}.hero{padding-top:5px;padding-bottom:28px}header{height:58px;padding:0 18px;grid-template-columns:1fr auto}.logo{font-size:15px}.nav{display:none}.new{font-size:9px}.hero-grid{display:flex;flex-direction:column-reverse;gap:20px}.hero-copy{width:100%}.kicker{margin-bottom:12px}h1{font-size:clamp(61px,17vw,91px);margin-bottom:30px;line-height:.81}.story-row{grid-template-columns:.55fr 1.45fr;gap:13px;margin-top:20px}.story-text{font-size:11px;line-height:1.55}.story-note{margin-top:18px}.heritage-row{margin-top:25px}.heritage-row strong{font-size:30px}.ctas{margin:43px 0 0 4%;gap:19px}.visual-stack{padding-top:0;width:100%;display:grid;grid-template-columns:1fr .56fr;grid-template-rows:270px 145px;gap:7px}.photo-one{width:100%;height:100%;grid-row:1/3}.photo-two{width:100%;height:100%;margin:0;grid-column:2;grid-row:2}.number{font-size:100px;left:-8px;top:230px}.lower-band{margin:0 18px 25px;padding-top:12px;font-size:7px;letter-spacing:.06em}.section{padding:55px 18px}.section-head{display:block}.section-head h2{font-size:49px}.section-head p{margin-top:16px}.filters{align-items:stretch}.filter-left,.filter-right{width:100%}.filter-left button{flex:1}.filters input{width:100%;min-width:0}.filters select{flex:1}.product-grid{gap:25px 10px}.product-img{height:clamp(210px,64vw,310px)}.product-meta h3{font-size:18px}.product-meta p{font-size:9px}.product-meta button{width:29px;height:29px}.manifesto{padding:55px 18px}.manifesto-img{height:300px}.manifesto-copy h2{font-size:49px}.contact{padding:52px 18px}.contact h2{font-size:51px}.contact a{white-space:normal}footer{padding:20px 18px;font-size:8px}.modal{grid-template-columns:1fr;max-height:94vh}.modal-img{height:240px;min-height:240px}.modal-content{padding:25px}.modal-content h2{font-size:34px}.float-wa{right:10px;bottom:10px;padding:12px 14px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="frame">
+<header><a class="logo" href="#home">BENANGMERAH</a><nav class="nav"><a href="#story">Chronicle /</a><a href="#heritage">Atelier /</a><a href="#catalog">Editions</a></nav><a class="new" href="#catalog">NEW COLLECTION</a></header>
+<main>
+<section class="hero" id="home"><div class="hero-grid">
+<div class="visual-stack"><div class="photo-one"><img src="https://images.unsplash.com/photo-1604881988758-f76ad2f7adde?auto=format&fit=crop&w=1000&q=85" alt="Detail tekstur kain dengan warna natural"></div><div class="photo-two"><img src="https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=850&q=85" alt="Material kain dalam cahaya lembut"></div><div class="number">01</div></div>
+<div class="hero-copy"><div class="kicker">Fabric / Form / Feeling</div><h1><span>A Fabric</span><span>Beyond</span><span>Season.</span></h1>
+<div class="story-row" id="story"><div class="story-label">THE STORY</div><div class="story-text">Berawal dari kebutuhan akan material yang tepat, Benangmerah Textile mengkurasi pilihan kain untuk ide yang ingin diwujudkan. Dari tekstur yang terasa hingga warna yang membangun suasana, setiap pilihan memberi ruang bagi kreativitas. Bukan sekadar bahan, melainkan awal dari sebuah karya.</div></div>
+<div class="story-note">Not chosen to impress — chosen to create.</div>
+<div class="heritage-row" id="heritage"><strong>TEXTURE, 01</strong><span>THE ARCHIVE</span></div>
+<div class="ctas"><a href="#catalog">EXPLORE THE FABRIC INDEX <span>↳</span></a><a href="#contact">FIND YOUR MATERIAL <span>↳</span></a></div>
+</div></div></section>
+<div class="lower-band"><span>BENANGMERAH TEXTILE / FABRIC HOUSE</span><span>CURATED FOR YOUR NEXT CREATION</span><span>INDONESIA</span></div>
+<section class="section" id="catalog"><div class="section-head"><div><div class="overline">02 / The collection</div><h2>The Fabric<br>Index.</h2></div><p>Jelajahi material berdasarkan kategori dan warna. Buka detail kain untuk memulai konsultasi langsung.</p></div>
+<div class="filters"><div class="filter-left"><button class="active" data-cat="Semua">ALL FABRICS</button><button data-cat="Rayon">RAYON</button><button data-cat="Cotton">COTTON</button><button data-cat="Twill">TWILL</button><button data-cat="Linen">LINEN</button></div><div class="filter-right"><input id="search" type="search" placeholder="Search material..." aria-label="Cari kain"><select id="color" aria-label="Filter warna"><option value="Semua">Semua warna</option><option>Olive</option><option>Terracotta</option><option>Cream</option><option>Blue</option><option>Dark</option></select></div></div>
+<div class="product-grid" id="products">
+<article class="product" tabindex="0" role="button" data-name="Rayon Twill" data-cat="Rayon" data-color="Olive" data-feel="Lembut, jatuh, nyaman" data-width="Konfirmasi melalui WhatsApp" data-desc="Kain dengan sentuhan lembut dan drape yang anggun. Cocok untuk berbagai rancangan busana yang membutuhkan jatuh kain yang nyaman." data-img="https://images.unsplash.com/photo-1604881988758-f76ad2f7adde?auto=format&fit=crop&w=1000&q=85"><div class="product-img"><img src="https://images.unsplash.com/photo-1604881988758-f76ad2f7adde?auto=format&fit=crop&w=800&q=80" alt="Rayon twill warna olive" loading="lazy"><span class="product-index">EDITION 001</span></div><div class="product-meta"><div><h3>Rayon Twill</h3><p>Soft touch / fluid drape</p></div><button aria-label="Lihat detail Rayon Twill">↗</button></div></article>
+<article class="product" tabindex="0" role="button" data-name="Cotton Daily" data-cat="Cotton" data-color="Cream" data-feel="Natural, nyaman, versatile" data-width="Konfirmasi melalui WhatsApp" data-desc="Material bernuansa natural untuk kebutuhan harian. Nyaman dipakai dan mudah dipadukan dengan berbagai konsep." data-img="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&w=1000&q=85"><div class="product-img"><img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&w=800&q=80" alt="Cotton daily warna natural" loading="lazy"><span class="product-index">EDITION 002</span></div><div class="product-meta"><div><h3>Cotton Daily</h3><p>Everyday / comfort</p></div><button aria-label="Lihat detail Cotton Daily">↗</button></div></article>
+<article class="product" tabindex="0" role="button" data-name="Twill Terra" data-cat="Twill" data-color="Terracotta" data-feel="Berstruktur, kokoh, serbaguna" data-width="Konfirmasi melalui WhatsApp" data-desc="Twill dengan karakter yang tegas untuk rancangan yang membutuhkan struktur dan tampilan yang kuat." data-img="https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=1000&q=85"><div class="product-img"><img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=800&q=80" alt="Twill terra tekstur tegas" loading="lazy"><span class="product-index">EDITION 003</span></div><div class="product-meta"><div><h3>Twill Terra</h3><p>Structure / character</p></div><button aria-label="Lihat detail Twill Terra">↗</button></div></article>
+<article class="product" tabindex="0" role="button" data-name="Linen Natural" data-cat="Linen" data-color="Cream" data-feel="Natural, bertekstur, ringan" data-width="Konfirmasi melalui WhatsApp" data-desc="Material dengan tampilan natural dan tekstur yang memberi karakter pada busana maupun proyek kreatif." data-img="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=85"><div class="product-img"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80" alt="Linen natural" loading="lazy"><span class="product-index">EDITION 004</span></div><div class="product-meta"><div><h3>Linen Natural</h3><p>Natural / timeless</p></div><button aria-label="Lihat detail Linen Natural">↗</button></div></article>
+<article class="product" tabindex="0" role="button" data-name="Soft Blue" data-cat="Rayon" data-color="Blue" data-feel="Lembut, ringan, segar" data-width="Konfirmasi melalui WhatsApp" data-desc="Pilihan bernuansa biru lembut untuk komposisi yang ringan dan segar. Ketersediaan warna dapat ditanyakan langsung." data-img="https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1000&q=85"><div class="product-img"><img src="https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=800&q=80" alt="Soft blue fabric" loading="lazy"><span class="product-index">EDITION 005</span></div><div class="product-meta"><div><h3>Soft Blue</h3><p>Light / calm / expressive</p></div><button aria-label="Lihat detail Soft Blue">↗</button></div></article>
+<article class="product" tabindex="0" role="button" data-name="Textured Neutral" data-cat="Tekstur" data-color="Dark" data-feel="Bertekstur, modern, fleksibel" data-width="Konfirmasi melalui WhatsApp" data-desc="Tekstur bernuansa netral yang mudah dipadukan. Hubungi kami untuk detail stok, lebar, komposisi, dan harga." data-img="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1000&q=85"><div class="product-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80" alt="Textured neutral material" loading="lazy"><span class="product-index">EDITION 006</span></div><div class="product-meta"><div><h3>Textured Neutral</h3><p>Texture / modern / flexible</p></div><button aria-label="Lihat detail Textured Neutral">↗</button></div></article>
+</div><p id="count" style="font-size:9px;letter-spacing:.12em;color:var(--muted);margin-top:22px">06 EDITIONS</p>
+</section>
+<section class="section manifesto"><div class="manifesto-img"><img src="https://images.unsplash.com/photo-1604881988758-f76ad2f7adde?auto=format&fit=crop&w=1100&q=85" alt="Close-up tekstur kain natural" loading="lazy"></div><div class="manifesto-copy"><div class="overline">03 / Our point of view</div><h2>Material first.<br>Meaning always.</h2><p>Benangmerah Textile percaya bahwa karya yang berkesan dimulai dari pilihan material yang tepat. Kami ingin membantu Anda mengenali karakter kain, membandingkan pilihan, dan menemukan bahan yang mendukung ide Anda.</p><p>Mulai dari satu pertanyaan sederhana: karya seperti apa yang ingin Anda wujudkan?</p><a href="#contact">DISCOVER THE BENANGMERAH APPROACH ↗</a></div></section>
+<section class="section contact" id="contact"><div><div style="font-size:9px;letter-spacing:.18em;text-transform:uppercase">04 / Begin a conversation</div><h2>Find the fabric<br>behind your idea.</h2><p>Ceritakan kebutuhan kain Anda. Tanyakan harga, warna, lebar, stok, dan rekomendasi material langsung melalui WhatsApp.</p></div><a href="https://wa.me/628112478886?text=Halo%20Benangmerah%20Textile%2C%20saya%20ingin%20konsultasi%20kain." target="_blank" rel="noopener">START A CONVERSATION ↗</a></section>
+</main>
+<footer><span>BENANGMERAH TEXTILE © <span id="year"></span></span><span>FABRIC / FORM / FEELING</span><span>INDONESIA</span></footer>
+</div>
+<a class="float-wa" href="https://wa.me/628112478886?text=Halo%20Benangmerah%20Textile%2C%20saya%20ingin%20bertanya%20tentang%20kain." target="_blank" rel="noopener">WhatsApp ↗</a>
+<div class="modal-bg" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal"><button class="modal-close" id="close" aria-label="Tutup">×</button><div class="modal-img"><img id="modalImage" src="" alt=""></div><div class="modal-content"><div id="modalCategory" style="font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--red)">FABRIC DETAIL</div><h2 id="modalTitle">Fabric name</h2><p id="modalDesc"></p><div class="spec"><span>Karakter</span><span id="modalFeel"></span></div><div class="spec"><span>Lebar / stok</span><span id="modalWidth"></span></div><div class="spec"><span>Harga</span><span>Tanya langsung</span></div><a id="modalWA" class="button" style="background:var(--red);color:#fff8ef;border-color:var(--red);margin-top:18px" href="#" target="_blank" rel="noopener">TANYA KAIN INI ↗</a></div></div></div>
+<script>
+const WA='628112478886';document.getElementById('year').textContent=new Date().getFullYear();
+const products=[...document.querySelectorAll('.product')],search=document.getElementById('search'),color=document.getElementById('color'),count=document.getElementById('count');let cat='Semua';
+document.querySelectorAll('[data-cat]').forEach(b=>b.addEventListener('click',()=>{cat=b.dataset.cat;document.querySelectorAll('[data-cat]').forEach(x=>x.classList.toggle('active',x===b));filter()}));
+function filter(){let n=0;const q=search.value.trim().toLowerCase();products.forEach(p=>{const match=(p.dataset.name+' '+p.dataset.cat+' '+p.dataset.color+' '+p.dataset.feel+' '+p.dataset.desc).toLowerCase().includes(q)&&(cat==='Semua'||p.dataset.cat===cat)&&(color.value==='Semua'||p.dataset.color===color.value);p.style.display=match?'':'none';if(match)n++});count.textContent=String(n).padStart(2,'0')+' EDITIONS';let empty=document.getElementById('empty');if(!n&&!empty){empty=document.createElement('div');empty.id='empty';empty.className='no-results';empty.textContent='Tidak ada kain yang cocok. Coba filter lainnya.';document.getElementById('products').appendChild(empty)}else if(n&&empty)empty.remove()}
+search.addEventListener('input',filter);color.addEventListener('change',filter);
+const modal=document.getElementById('modal');function open(p){document.getElementById('modalImage').src=p.dataset.img;document.getElementById('modalImage').alt=p.dataset.name;document.getElementById('modalCategory').textContent=p.dataset.cat+' / FABRIC DETAIL';document.getElementById('modalTitle').textContent=p.dataset.name;document.getElementById('modalDesc').textContent=p.dataset.desc;document.getElementById('modalFeel').textContent=p.dataset.feel;document.getElementById('modalWidth').textContent=p.dataset.width;const msg=`Halo Benangmerah Textile, saya tertarik dengan ${p.dataset.name}. Bisa info harga, komposisi, lebar, warna tersedia, dan stoknya?`;document.getElementById('modalWA').href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg);modal.classList.add('open');document.body.style.overflow='hidden';document.getElementById('close').focus()}
+function close(){modal.classList.remove('open');document.body.style.overflow=''}
+products.forEach(p=>{p.addEventListener('click',()=>open(p));p.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open(p)}})});document.getElementById('close').addEventListener('click',close);modal.addEventListener('click',e=>{if(e.target===modal)close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});filter();
+</script>
+</body></html>
